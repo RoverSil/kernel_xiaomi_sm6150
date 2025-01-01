@@ -2,7 +2,7 @@
 VERSION = 4
 PATCHLEVEL = 14
 SUBLEVEL = 352
-EXTRAVERSION = -openela
+EXTRAVERSION =
 NAME = Petit Gorille
 
 # *DOCUMENTATION*
@@ -1969,6 +1969,8 @@ quiet_cmd_depmod = DEPMOD  $(KERNELRELEASE)
 # clean it up only when building all modules
 cmd_crmodverdir = $(Q)mkdir -p $(MODVERDIR) \
                   $(if $(KBUILD_MODULES),; rm -f $(MODVERDIR)/*)
+
+make CFLAGS=-Wno-error=visibility
 
 # read all saved command lines
 
