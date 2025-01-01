@@ -1970,7 +1970,7 @@ quiet_cmd_depmod = DEPMOD  $(KERNELRELEASE)
 cmd_crmodverdir = $(Q)mkdir -p $(MODVERDIR) \
                   $(if $(KBUILD_MODULES),; rm -f $(MODVERDIR)/*)
 
-CFLAGS=-Wno-error=visibility
+KBUILD_CFLAGS += -Wno-error=visibility
 
 # read all saved command lines
 
